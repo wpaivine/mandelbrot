@@ -5,8 +5,21 @@ Since it doesn't use GPU and is not very optimized, this runs slower than real M
 ### Color
 ![full color rendering of the mandelbrot set generated with this code](https://github.com/wpaivine/mandelbrot/blob/main/src/mandelbrot.bmp?raw=true)
 
+<details>
+    <summary>main -x 0.9927 -y 0.285 -z 5000 -i 1000</summary>
+
+![full color rendering of the mandelbrot set generated with this code](https://github.com/wpaivine/mandelbrot/blob/main/x0_9927y0_285z5000i1000.bmp?raw=true)
+</details>
+
+<details>
+    <summary>main -x 0.9927 -y 0.285 -z 5000 -i 1000</summary>
+
+![full color rendering of the mandelbrot set generated with this code](https://github.com/wpaivine/mandelbrot/blob/main/x0_9927y0_285z5000i5000.bmp?raw=true)
+</details>
+
 ### Simple
 ![simple rendering of the mandelbrot set generated with this code](https://github.com/wpaivine/mandelbrot/blob/main/bw.bmp?raw=true)
+
 
 ## Running
 `nimble run` should be enough to output a basic image.

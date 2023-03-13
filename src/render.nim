@@ -57,15 +57,16 @@ func renderGradientMandelBrot*(width: int, height: int, zoom: float,
 
     var allIters = newSeq[float](width * height)
 
-    # Chunk the image into something on the order of the number of cpus. Use 2x chunks in case any chunks finish early
-    let chunkSize = int(height / countProcessors() * 2)
+    # Chunk the image into something on the order of the number of cpus. Use 3x cpus in case any chunks finish early
+    let chunkSize = int(height / (countProcessors() * 3))
     var lastChunk = 0
     parallel:
+        var numChunks = 0
         while lastChunk < height:
+            numChunks += 1
             spawn renderGradientChunk(allIters, width, height, lastChunk,
                     chunkSize, zoom, xOffset, yOffset, maxIters)
             lastChunk = min(lastChunk + chunkSize, height)
-
     let itersNotInSet = allIters.filter(func (i: float): bool = i > 0)
     let minIters = itersNotInSet.min()
     let maxIters = allIters.max()
