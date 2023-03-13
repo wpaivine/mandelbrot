@@ -55,7 +55,7 @@ proc makeSimpleMandelbrotImageFile(
 var parser = newParser:
     option("-o", "--output", help = "Output to this file (bmp)", default = some("mandelbrot.bmp"))
     option("-w", "--width", help = "Width of output image", default = some("1280"))
-    option("-h", "--height", help = "height of output image", default = some("720"))
+    option("-H", "--height", help = "height of output image", default = some("720"))
     option("-z", "--zoom", help = "How much to zoom into the render",
             default = some("1.35"))
     option("-x", "--x-offset", help = "X location of the center of the image",
